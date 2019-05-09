@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="banniere">
+        <h1 div class="titre-principal">ChrisarTatoo</h1>
+        <!-- peut être pas la meilleure solution pour mettre le titre dans la bannière car ça part de tout en haut-->
+    </div>
+
+
+
+
+
+
+
+    <main class="main">
+
+        {% for article in articles %}
+
+            <article class="article">
+                <a href="article.html" class="article-img"> <img src="{{ article.image }}" alt="image old school"></a>
+                <div class="text">
+
+                    <div class="article-date">publié le {{ article.date }}</div>
+                    <a href="article.html"><h2 class="article-title">{{ article.title }}</h2></a>
+                    <p> {{ article.content }}</p>
+                </div>
+            </article>
+        {% endfor %}
+
+
+    </main>
+
+    <aside class="sidebar">
+        <h4 class="sidebar-title">Evénement</h4>
+        <ul>
+            {% for evenement in evenements %}
+                <li><a href="#">{{ evenement.date }} : <br>{{evenement.name  }}</a></li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h4 class="sidebar-title">Actualité</h4>
+        <ul>
+            <li><a href="#">Chèques cadeaux à gagner !</a></li>
+            <li><a href="#">Des liens</a></li>
+            <li><a href="#">Des liens</a></li>
+            <li><a href="#">Des liens</a></li>
+        </ul>
+        <hr>
+        <h4 class="sidebar-title">Le salon</h4>
+        <div class="infos">
+
+            <ul>
+                <li>326 Avenue du Las<br>
+                    33127 Saint-Jean-d'Illac
+                </li>
+                <li>06 50 88 58 54</li>
+                <li>Horaires :<br> du lundi au samedi de 10H00 à 18H00</li>
+            </ul>
+
+        </div>
+    </aside>
+
+{% endblock %}

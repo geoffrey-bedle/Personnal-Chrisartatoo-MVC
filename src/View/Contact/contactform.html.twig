@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <form style="margin-top: 100px" class="form-contact" method="post" action="">
+    <div>
+        <label for="nom">Votre nom *</label>
+        <input type="text" name="name" placeholder="Votre nom ...">
+        <span class="error"><?php if(isset($errors['nameError'])){ echo $errors['nameError'];}?></span>
+    </div>
+
+    <div>
+        <label for="email">Votre email *</label>
+        <input type="text" name="email" placeholder="@">
+        <span class="error"><?php if(isset($errors['mailError'])){ echo $errors['mailError'];}?></span>
+    </div>
+    <div>
+        <label for="sujet">Votre sujet</label>
+        <input type="text" name="sujet" placeholder=" ">
+
+    </div>
+    <div>
+        <label for="message">Votre message *</label>
+        <textarea name="message" id="message" placeHolder="Votre Message..."></textarea>
+        <span class="error"><?php if(isset($errors['messageError'])){ echo $errors['messageError'];}?></span>
+    </div>
+    <button type="submit">Envoyer</button>
+
+    </form>
+
+{% endblock %}

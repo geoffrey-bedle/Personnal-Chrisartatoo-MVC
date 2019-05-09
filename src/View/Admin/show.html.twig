@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+{% block content %}
+
+    <table class="admin-table">
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.date }}</td>
+                <td>{{ article.title }}</td>
+                <td><a href="/admin/editarticlebyid/{{ article.id }}">modifier</a></td>
+                <td><a href="/admin/deletearticlebyid/{{ article.id }}">supprimer</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <table class="admin-table">
+        {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.date }}</td>
+                <td>{{ evenement.name }}</td>
+                <td><a href="/admin/updatevenmentbyid/{{ evenement.id }}">modifier</a></td>
+                <td><a href="/admin/deleteevenmentbyid/{{ evenement.id }}">supprimer</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <table class="admin-table">
+
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+            <td><a href="/gallery/showcategory/{{ category.id }}"><img src="{{ category.image }}"></a></td>
+            <td><a href="/admin/deletecategorybyid/{{ category.id }}">supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

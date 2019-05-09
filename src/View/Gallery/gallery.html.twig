@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/gallery.css">
+{% endblock %}
+
+{% block content %}
+    <div class="categories">
+
+    {% for category in categories %}
+
+        <div class="card">
+            <div>
+                <a href="/gallery/showcategory/{{ category.id }}"><img src="{{ category.image }}" alt="category"></a>
+            </div>
+            <div class="category-link">
+                <a   href="/gallery/showcategory/{{ category.id }}">{{ category.name }}</a>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}

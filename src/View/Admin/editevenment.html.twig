@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+{% block content %}
+
+
+
+    <form method="post" action="/admin/updatevenmentbyid/{{ evenement.id }}">
+        <div>
+
+            <label id="name">Evénement : </label>
+            <input type="text" name="name" value="{{ evenement.name }}">
+        </div>
+        <div>
+
+            <label id="date">Date : </label>
+            <input type="text" for="date" name="date" value="{{ evenement.date }}">
+        </div>
+        <input type="submit" name="submit" value="enregistrer">
+
+
+    </form>
+
+{% endblock %}

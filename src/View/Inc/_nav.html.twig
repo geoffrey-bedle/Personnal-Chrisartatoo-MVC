@@ -1,0 +1,28 @@
+<header class="topbar">
+    <nav>
+        <a href="/" class="{% if server.REQUEST_URI == '/' %} active{% endif %}">Accueil</a>
+        <a href="/gallery/categories"
+           class="{% if server.REQUEST_URI == '/gallery/categories' %} active{% endif %}">Galerie</a>
+        <a href="/about/index" class="{% if server.REQUEST_URI == '/about/index' %} active{% endif %}">A propos</a>
+        <a href="/contact/index" class="{% if server.REQUEST_URI == '/contact/index' %} active{% endif %}">Contact</a>
+        {% if not session %}
+        <a href="/login/login" class="{% if server.REQUEST_URI == '/login/login' %} active{% endif %}">Connexion</a>
+        {% endif %}
+        {% if session %}
+            <a href="/login/logout">Deconnexion</a>
+        {% if session.status==1 %}
+            <a href="/admin/admin" class="{% if server.REQUEST_URI == '/admin/admin' %} active{% endif %}">Page administrateur</a>
+        {% endif %}
+        {% endif %}
+
+    </nav>
+
+    <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100005741835232" target="_blank"><img
+                    src="/assets/images/facebook.svg" title="Facebook" alt="Facebook"></a>
+        <a href="https://www.instagram.com/chrisartatoo/?hl=fr" target="_blank"><img src="/assets/images/insta.svg"
+                                                                                     title="Instagram" alt="Instagram"></a>
+    </div>
+
+
+</header>

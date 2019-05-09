@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chrisartatoo.fr</title>
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% block stylesheet %}{% endblock %}
+    <link href='https://fonts.googleapis.com/css?family=New Rocker' rel='stylesheet'>
+
+
+</head>
+
+<body>
+{% include 'Inc/_nav.html.twig' %}
+
+{% block content %}
+{% endblock %}
+
+{% block javascript %}{% endblock %}
+</body>
+</html>
+
+

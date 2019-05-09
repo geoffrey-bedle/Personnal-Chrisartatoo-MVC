@@ -1,0 +1,66 @@
+
+h1{
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+div > input{
+    width: 450px;
+    height: 40px;
+
+
+}
+
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+input{
+    width: 450px;
+    height: 40px;
+    margin-top: 25px;
+}
+
+body{
+
+    /*background: no-repeat center center /cover url("../images/paganmin.jpg");
+*/
+    background-color: white;
+    color:white;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    border:solid white 2px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.7);
+    width: 600px;
+    margin-top: 30px;
+
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+textarea{
+    width: 450px;
+    height: 150px;
+}
+
+.admin-table{
+    border:solid black 1px;
+    color: black;
+    background-color: rgba(255,255,255,.6);
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.admin-table img{
+    width: 40px;
+    height:40px;
+}

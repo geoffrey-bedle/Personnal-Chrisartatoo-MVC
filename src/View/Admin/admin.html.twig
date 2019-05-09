@@ -1,0 +1,93 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+{% block content %}
+    <h1>Page admin</h1>
+    <a href="/admin/show">
+        <button>Modifier/supprimer</button>
+    </a>
+    <div class="block">
+
+        <div>
+
+            <form action="/admin/addarticle" method="post" enctype="multipart/form-data">
+                <h2>Création d'un nouvel article</h2>
+                <div class="input">
+                    <label for="upload">Votre photo : </label>
+                    <input type="file" id="upload" name="upload[]" multiple="multiple"/>
+                </div>
+                <div class="input">
+                    <label for="title">Titre de l'article : </label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="input">
+                    <label for="date">date de publication : </label>
+                    <input type="text" id="date" name="date">
+                </div>
+                <div class="input">
+                    <label for="content">contenu de l'article : </label>
+                    <textarea id="content" name="content"></textarea>
+                </div>
+
+                <input type="submit" name="submit" value="Enregistrer"/>
+            </form>
+        </div>
+        <div>
+
+            <div>
+
+                <form method="post" action="/admin/addevenement">
+                    <h2>Création d'un nouvel événement</h2>
+                    <div class="input">
+                        <label for="evenment">Evénement : </label>
+                        <input type="text" id="evenment" name="evenment" placeholder="ex : Soirée tatoo flash">
+                    </div>
+                    <div class="input">
+                        <label for="date">Date : </label>
+                        <input type="text" id="date" name="date" placeholder="29/04/19">
+                    </div>
+                    <div class="input">
+                        <input type="submit" name="submit" value="Enregistrer"/>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+
+                <form method="post" action="/admin/addcategory" enctype="multipart/form-data">
+                    <h2>Ajout d'une catégorie</h2>
+                    <div class="input">
+                        <label for="category">Catégorie : </label>
+                        <input type="text" id="category" name="name">
+                    </div>
+                    <div class="input">
+                        <label for="upload">Image : </label>
+                        <input type="file" id="upload" name="upload" multiple="multiple"/>
+                    </div>
+                    <div class="input">
+                        <input type="submit" name="submit" value="Enregistrer"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <form method="post" action="/Admin/addImage" enctype="multipart/form-data">
+        <h2>Ajouter une image</h2>
+        <div>
+            <select name="category" id="category">
+                {% for category in categories %}
+                    <option name="category" id="category" value={{ category.id }}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="upload">Image : </label>
+            <input type="file" id="upload" name="upload[]" multiple="multiple"/>
+        </div>
+        <input type="submit" name="submit" value="Enregistrer"/>
+    </form>
+
+    </div>
+
+{% endblock %}
