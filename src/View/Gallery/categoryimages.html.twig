@@ -3,11 +3,13 @@
     <link rel="stylesheet" href="/assets/css/gallery.css">
 {% endblock %}
 {% block content %}
-{{ dump(images) }}
+
     {% for image in images %}
         <img src="{{ image.name }}">
-        <a href="/gallery/deleteimagebyid/{{ image.id }}">Delete</a>
-        {% else %}
+        {% if session.status==1 %}
+            <a href="/gallery/deleteimagebyid/{{ image.id }}">Delete</a>
+        {% endif %}
+    {% else %}
         <h2>Pas de photos !</h2>
     {% endfor %}
 {% endblock %}
