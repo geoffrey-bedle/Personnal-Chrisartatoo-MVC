@@ -46,7 +46,9 @@ Les vues sont générées via le moteur de template Twig.
 
 * Créer,modifier ou supprimer un événement
 
-* Créer, modifier, supprimer 
+* Ajouter,modifier supprimer une catégorie
+
+* Ajouter, supprimer une image
  
 ***
 ### Fonctionnalité de login par mot de passe
