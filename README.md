@@ -51,7 +51,7 @@ Les vues sont générées via le moteur de template Twig.
 * Ajouter, supprimer une image
  
 ***
-### Fonctionnalité de login par mot de passe
+### Fonctionnalité de login/logout par mot de passe
 
 * En tant qu'utilisateur je peux me connecter et avoir accès à un espace personnel
 * En tant qu'administrateur je peux me connecter et avoir accès à mon espace de gestion
