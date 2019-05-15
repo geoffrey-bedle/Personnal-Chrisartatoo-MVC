@@ -48,3 +48,8 @@ Les vues sont générée via le moteur de template Twig.
 
 * Créer, modifier, supprimer 
  
+***
+### Fonctionnalité de loggin par mot de passe
+
+* En tant qu'utilisateur je peux me connecter et avoir accès à un espace personnel
+* En tant qu'administrateur je peux me connecter et avoir accès à mon espace de gestion
