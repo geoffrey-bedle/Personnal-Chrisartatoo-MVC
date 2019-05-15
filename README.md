@@ -35,6 +35,7 @@ Les vues sont générée via le moteur de template Twig.
 ### Partie administrateur
  
 #### CRUD permettant de :
+
 * Créer un article
     * titre
     * date
@@ -42,4 +43,8 @@ Les vues sont générée via le moteur de template Twig.
     * upload image
 * Modifier un article
 * Supprimer un article
+
+* Créer,modifier ou supprimer un événement
+
+* Créer, modifier, supprimer 
  
