@@ -3,12 +3,28 @@
 ## Site Chisartatoo : salon de tatouage
 
 
-Objectifs:
+Objectifs: 
 
-* Site vitrine pour salon de tatouage
+Réaliser un site vitrine pour un tatoueur sur le modèle MVC relié à une BDD avec un espace admin pour gérer les publications.
+Les vues sont générée via le moteur de template Twig.
+
+
+Le site devait présenter:
+
 * Page accueil
 * Page gallerie listant différentes catégories d'images
 * Page image affichant toutes les images d'une catégorie
 * Page détails affichant une image sélectionnée
+* Page à propos
+* Page contact
+* Une barre de navigation / Liens externes vers facebook\instagram
+
+
+Dynamisation du site:
+
+* Modélisation BDD
+* Création partie administrateur
+* Création de CRUD permettants d'administrer différentes partie du site
+* Mise ne place d'une fonction de loggin utilisateur/administrateur
  
 
