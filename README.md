@@ -6,14 +6,14 @@
 Objectifs: 
 
 Réaliser un site vitrine pour un tatoueur sur le modèle MVC relié à une BDD avec un espace admin pour gérer les publications.
-Les vues sont générée via le moteur de template Twig.
+Les vues sont générées via le moteur de template Twig.
 
 *** 
 
  #### Le site devait présenter:
 
 * Page accueil
-* Page gallerie listant différentes catégories d'images
+* Page galerie listant différentes catégories d'images
 * Page image affichant toutes les images d'une catégorie
 * Page détails affichant une image sélectionnée
 * Page à propos
@@ -27,8 +27,8 @@ Les vues sont générée via le moteur de template Twig.
 * Modélisation BDD
 * Création partie administrateur
 * Création de CRUD permettants d'administrer différentes partie du site
-* Mise en place d'une fonction de loggin utilisateur/administrateur
-* Affichage dynamique des images et des catégories dans la gallerie
+* Mise en place d'une fonction de login utilisateur/administrateur
+* Affichage dynamique des images et des catégories dans la galerie
 
 ***
 
@@ -49,7 +49,7 @@ Les vues sont générée via le moteur de template Twig.
 * Créer, modifier, supprimer 
  
 ***
-### Fonctionnalité de loggin par mot de passe
+### Fonctionnalité de login par mot de passe
 
 * En tant qu'utilisateur je peux me connecter et avoir accès à un espace personnel
 * En tant qu'administrateur je peux me connecter et avoir accès à mon espace de gestion
