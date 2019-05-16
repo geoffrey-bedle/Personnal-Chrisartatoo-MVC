@@ -17,7 +17,7 @@ class AdminController extends AbstractController
         $categoriesManager = new CategoriesManager();
         $categories = $categoriesManager->selectAll();
         if ($_SESSION['status'] != 1) {
-            header('Location:/');                       //renvoie sur l'accueil si pas administrateur
+            header('Location:/');
         }
         return $this->twig->render('Admin/admin.html.twig', ['categories' => $categories]);
     }
@@ -117,23 +117,21 @@ class AdminController extends AbstractController
 
     public function editArticleById($id)
     {
-        //TODO BUG modification article supprime l'image
+
         $articleManager = new ArticleManager();
         $article = $articleManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_FILES['upload']['name'])) {                //si rien n'est uploadé
-                $_POST['image'] = $article['image'];                //$_POST['image'] est égal à ce qu'il y a en bdd
+            if (empty($_FILES['upload']['name'])) {
+                $_POST['image'] = $article['image'];
             } else {
                 $upload_dir = 'assets/upload/articles';
-
+                if (file_exists($article['image']) && $article['image'] != $upload_dir . '/') {
+                    unlink($article['image']);
+                }
+                $upload_dir = 'assets/upload/articles';
                 $name = $_FILES['upload']['name'];
-                $size = $_FILES['upload']['size'];
-                $file = $_FILES['upload']['name'];
-                $type = $_FILES['upload']['type'];
-                $types = ['image/jpeg', 'image/png', 'image/gif'];
 
-                var_dump($article['image']);
                 $infos = new \SplFileInfo($name);
                 $ext = $infos->getExtension();
                 $filename = 'image_' . uniqid() . '.' . $ext;
@@ -143,10 +141,8 @@ class AdminController extends AbstractController
                 move_uploaded_file($tmp_name, "$upload_dir/$filename");
                 $_POST['image'] = $upload_dir . '/' . $filename;
             }
-            $upload_dir = 'assets/upload/articles';
-            if (file_exists($article['image']) && $article['image'] != $upload_dir . '/') {
-                unlink($article['image']);
-            }
+
+
             $articleManager->update($id, $_POST);
             header('Location:/admin/show');
         }
