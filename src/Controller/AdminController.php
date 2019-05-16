@@ -117,12 +117,13 @@ class AdminController extends AbstractController
 
     public function editArticleById($id)
     {
+        //TODO BUG modification article supprime l'image
         $articleManager = new ArticleManager();
         $article = $articleManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_FILES['upload']['name'])) {
-                $_POST['image'] = $article['image'];
+            if (empty($_FILES['upload']['name'])) {                //si rien n'est uploadé
+                $_POST['image'] = $article['image'];                //$_POST['image'] est égal à ce qu'il y a en bdd
             } else {
                 $upload_dir = 'assets/upload/articles';
 
